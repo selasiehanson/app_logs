@@ -14,22 +14,6 @@ function getLogs (){
   }
 }
 
-function getDataXHR(){
-  reqwest({
-    url: 'http://applog.apps.axonerp.com/geotech/logs?auth=uJFb6j0flWctLkBZhgjPPIj2GeqzUpA',
-    type:'json',
-    method: 'get',
-    contentType: 'application/json',
-    crossOrigin: true,
-    success: function (resp){
-      console.log(resp)
-    },
-    error: function (err){
-      console.log(err)
-    }
-  })
-}
-
 var Logs = React.createClass({
     mixins:[LogStore.mixin, Router.State],
     getInitialState(){
@@ -37,7 +21,6 @@ var Logs = React.createClass({
     },
     componentDidMount(){
       LogActions.getList();
-      getDataXHR();
     },
     storeDidChange(){
       this.setState(getLogs());
