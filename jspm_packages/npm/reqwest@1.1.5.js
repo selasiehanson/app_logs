@@ -1,0 +1,1 @@
+module.exports = require("npm:reqwest@1.1.5/reqwest");

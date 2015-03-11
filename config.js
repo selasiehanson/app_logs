@@ -15,8 +15,10 @@ System.config({
     "gulp": "npm:gulp@3.8.11",
     "jquery": "github:components/jquery@2.1.3",
     "mcfly": "npm:mcfly@0.0.10",
+    "moment": "bower:moment@2.9.0",
     "react": "npm:react@0.12.2",
     "react-router": "npm:react-router@0.12.4",
+    "reqwest": "npm:reqwest@1.1.5",
     "underscore": "npm:underscore@1.8.2",
     "bower:font-awesome@4.3.0": {
       "css": "github:systemjs/plugin-css@0.1.6"
@@ -664,6 +666,12 @@ System.config({
     },
     "npm:replace-ext@0.0.1": {
       "path": "github:jspm/nodelibs-path@0.1.0"
+    },
+    "npm:reqwest@1.1.5": {
+      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
+      "fs": "github:jspm/nodelibs-fs@0.1.1",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:resolve@1.1.5": {
       "fs": "github:jspm/nodelibs-fs@0.1.1",

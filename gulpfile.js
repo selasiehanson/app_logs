@@ -1,13 +1,33 @@
 var gulp = require('gulp');
 var react = require('gulp-react');
 var plugins = require('gulp-load-plugins')();
+var connect = require('gulp-connect');
+var url = require('url');
+var proxy = require("proxy-middleware");
+
+var proxyOptions = url.parse('http://localhost:9000')
+proxyOptions.route = '/api';
+var middlewares = [proxy(proxyOptions)];
+
+gulp.task('connect', function () {
+  return connect.server({
+    root: './',
+    livereload: true,
+    middleware: function (connect, opt) {
+      return middlewares;
+    }
+    
+    
+  });
+});
 
 gulp.task('jsx', function (){
-return gulp.src('src/js/**/*.js')
+  return gulp.src('src/js/**/*.js')
     //.pipe(plugins.cached('jsx'))
     .pipe(plugins.react())
     .on('error', plugins.util.log)
-    .pipe(gulp.dest('build/js/'));
+    .pipe(gulp.dest('build/js/'))
+    .pipe(connect.reload());
 });
 
 gulp.task('sass', function() {
@@ -22,7 +42,8 @@ gulp.task('sass', function() {
     .on('error', plugins.util.log)
     .pipe(plugins.sourcemaps.write('.'))
     .pipe(gulp.dest('./build/css'))
-    .on('error', plugins.util.log);
+    .on('error', plugins.util.log)
+    .pipe(connect.reload());
 });
 
 
@@ -36,4 +57,5 @@ gulp.task('serve', ['jsx', 'sass'], function (){
   });
 });
 
-gulp.task('default',['serve']);
+
+gulp.task('default',['serve', 'connect']);

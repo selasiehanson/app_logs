@@ -1,0 +1,13 @@
+{
+  "name": "moment",
+  "version": "2.9.0",
+  "homepage": "https://github.com/moment/moment",
+  "main": "moment.js",
+  "devDependencies": {},
+  "format": "global",
+  "registry": "bower",
+  "jspm": {
+    "registry": "bower"
+  },
+  "dependencies": {}
+}

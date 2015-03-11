@@ -1,0 +1,1 @@
+module.exports = require("bower:moment@2.9.0/moment");
