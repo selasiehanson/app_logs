@@ -29,10 +29,12 @@ var Logs = React.createClass({
             return (
 
               <tr>
+                <td>
+                  <div className="error_count"> { log.count } </div>
+                </td>
                 <td> 
                   <div>
-                    <span className="badge badge-space"> {idx + 1} </span>
-                      { log.log_data.message } 
+                      { log.message.substring(0, 200) }... 
                   </div>
                 </td>
               </tr> 
@@ -40,7 +42,7 @@ var Logs = React.createClass({
         })
         return (
             <div className="home">
-                <table className="table table-bordered">
+                <table className="table table-bordered log-table">
                   <tbody>
                      {{ logs }}
                    </tbody>

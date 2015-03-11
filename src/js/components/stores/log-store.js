@@ -1,7 +1,18 @@
 import data from './data';
 import McFly from 'mcfly';
+import _ from 'underscore';
 
 window.x = data;
+
+var parsedData  = _.groupBy(x, function (log){
+  return log.log_data.message
+});
+
+var out  = [];
+for(var i in parsedData){
+  out.push({message: i, count: parsedData[i].length }); 
+}
+
 var Flux = new McFly();
 var LogStore = Flux.createStore({
     all(){
@@ -18,11 +29,11 @@ var LogStore = Flux.createStore({
 
 var _storeData = [];
 let _setData = (data) => {
-  _storeData = data.reverse() || [];
+  _storeData = data || [];
 };
   
 let loadLogs = () => {
-  _setData(data)
+  _setData(out)
   LogStore.emitChange();
 }
   

@@ -29,3 +29,22 @@ table td {
   margin-right: 5px;
   margin-bottom: 5px;
 }
+
+.log-table{
+  td {
+    border-right: 0px !important;
+    border-left: 0px !important;
+
+    .error_count {
+      margin-top: 4px;
+      padding: 4px 9px;
+      background: #305199;
+      color: white;
+      border-radius: 10px;
+      vertical-align: baseline;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+}
+
