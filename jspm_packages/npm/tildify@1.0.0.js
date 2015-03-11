@@ -1,0 +1,1 @@
+module.exports = require("npm:tildify@1.0.0/index");

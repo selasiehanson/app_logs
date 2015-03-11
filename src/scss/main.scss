@@ -1,0 +1,31 @@
+@import url(../../jspm_packages/github/twbs/bootstrap@3.3.2/css/bootstrap.css);
+//@import url(../../jspm_packages/bower/font-awesome@4.3.0/scss/font-awesome.scss);
+
+$font-size: 12px;
+$navbar-background: #FB2D26;
+ $navbar-link-color: white;
+
+body {
+  padding-top: 60px;
+  font-size: $font-size;
+}
+
+table td {
+  font-size: $font-size;
+}
+ .navbar-default {
+   background-color: $navbar-background;
+   .navbar-brand {
+     color: $navbar-link-color;
+   }
+   .navbar-nav > li {
+     a {
+       color: $navbar-link-color;
+     }
+   }
+ }
+
+.badge-space {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}

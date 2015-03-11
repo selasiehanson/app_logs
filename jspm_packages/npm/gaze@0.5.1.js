@@ -1,0 +1,1 @@
+module.exports = require("npm:gaze@0.5.1/lib/gaze");

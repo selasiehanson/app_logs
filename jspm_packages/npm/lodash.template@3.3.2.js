@@ -1,0 +1,1 @@
+module.exports = require("npm:lodash.template@3.3.2/index");

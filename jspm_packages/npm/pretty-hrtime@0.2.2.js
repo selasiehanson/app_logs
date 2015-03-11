@@ -1,0 +1,1 @@
+module.exports = require("npm:pretty-hrtime@0.2.2/index");
